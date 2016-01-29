@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron:400,900,700,500);
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,300,500,700);
+
+body {
+	font-family: "Roboto Mono", sans-serif;
+	background: #000 url(http://cssanimation.rocks/demo/starwars/images/bg.jpg);
+	color: white;
+}
+
+
+#wrapper {
+	width: 60%;
+}
+
+#content {
+	position: relative;
+	top: 100px;
+}
+
+h1, h3, h5, p{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+h1 {
+	color: #fdf253;
+}
+
+h1, button {
+	font-family: "Orbitron", sans-serif;
+}
+
+button {
+	letter-spacing: 0.1em;
+}
+
+.form-control {
+	font-size: 12px;
+}
+
+.btn-default:hover {
+	background-color: #fdf253;
+	transition: background-color 0.2s ;
+}
+
+h5, p {
+	font-family: 
+}
+
+#resultBox {
+	margin: 30px 0;
+	border: 1px solid;
+	padding: 8px;
+}
+
+#resultBox h5 {
+	text-align: left;
+}
+
+#result p {
+	font-style: italic;
+}
