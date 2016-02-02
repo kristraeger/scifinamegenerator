@@ -1,381 +1,443 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:400,900,700,500);
-
 @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,300,500,700);
-
 body {
-	font-family: "Roboto Mono", sans-serif;
-	background: #000 url(http://cssanimation.rocks/demo/starwars/images/bg.jpg);
-	color: white;
-	overflow: hidden;
+    font-family: "Roboto Mono", sans-serif;
+    background: #000 url(http://cssanimation.rocks/demo/starwars/images/bg.jpg);
+    color: white;
+    overflow: hidden;
 }
-
-
 #wrapper {
-	width: 60%;
+    width: 60%;
 }
-
 #content {
-	position: relative;
-	top: 100px;
+    position: relative;
+    top: 90px;
 }
-
-h1, h3, h5, p{
-	text-align: center;
-	margin-bottom: 30px;
+h1,
+h3,
+h5,
+p {
+    text-align: center;
+    margin-bottom: 30px;
 }
-
 h1 {
-	color: white;
-   -webkit-text-fill-color: transparent;
-   -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: #fefbc7;
+    color: white;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fefbc7;
 }
-
-h1, button {
-	font-family: "Orbitron", sans-serif;
-}
-
+h1,
 button {
-	letter-spacing: 0.1em;
-	
+    font-family: "Orbitron", sans-serif;
 }
-
-.form-control, .btn-default {
-	font-size: 12px;
-	height: 31px;
+button {
+    letter-spacing: 0.1em;
 }
-
+#infoBtn {
+    background-color: transparent;
+    color: #fefbc7;
+    font-size: 14px;
+    padding: 1px 0 0 1px;
+    line-height: 0.8em;
+    border: none;
+}
+#infoBtn:hover {
+    color: #fdf67c;
+}
+sup {
+    top: -.4em;
+    left: -.5em;
+}
+.popover {
+    width: 262px;
+}
+h3.popover-title,
+div.popover-content {
+    color: black;
+    font-family: "Roboto Mono";
+}
+div.popover-content {
+    font-size: 10px;
+}
+.form-control,
+.btn-default {
+    font-size: 12px;
+    height: 31px;
+}
 button.btn-default {
-	padding-top: 8px;
-	padding-bottom: 6px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    background-color: #fefbc7;
 }
-
-.btn-default:hover {
-	background-color: #fefbc7;
-	transition: background-color 0.2s ;
+.btn-default:hover,
+{
+    background-color: #fdf67c;
+    -webkit-transition: background-color 0.2s;
+            transition: background-color 0.2s;
 }
-
 #resultBox {
-	margin: 30px 0;
-	padding: 8px;
-	display: none;
-	z-index: 1;
-	height: 30%;
-	text-align: center;
+    margin: 30px 0;
+    padding: 8px;
+    display: none;
+    height: 30%;
+    text-align: center;
 }
-
 #resultBox h5 {
-	text-align: left;
+    text-align: left;
 }
-
 #result {
-	letter-spacing: 0.2em;
-	display: inline-block;
-	background-color: black;
-	color: white;
-   -webkit-text-fill-color: transparent;
-   -webkit-text-stroke-width: 0.5px;
-   -webkit-text-stroke-color: #fefbc7;
-   font-size: 18px;
+    letter-spacing: 0.2em;
+    display: inline-block;
+    background-color: black;
+    color: white;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #fefbc7;
+    font-size: 18px;
 }
-
 #labelResult {
-	display: inline-block;
-	background-color: black;
+    display: inline-block;
+    background-color: black;
 }
-
-#more {
-	text-align: center;
-	width: 100%;
-	margin: 10px 0 ;
+footer,
+footer a {
+    font-size: 10px;
+    color: black;
 }
-
 /*BB8*/
 
-*, *:before, *:after {
-  box-sizing: border-box;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
-
 h2 {
-  font-family: "Orbitron", sans-serif;
-  opacity: 1;
-  text-align: center;
-  transition: opacity .8s;
+    font-family: "Orbitron", sans-serif;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    text-align: center;
+    -webkit-transition: opacity .8s;
+            transition: opacity .8s;
 }
 h2.hide {
-  opacity: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
-
 .sand {
-  background: #bab896;
-  height: 20%;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    background: #bab896;
+    height: 20%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
-
 .bb8 {
-  position: absolute;
-  margin-left: -70px;
-  width: 140px;
-  bottom: 15%;
-  left: 0;
+    position: absolute;
+    margin-left: -70px;
+    width: 140px;
+    bottom: 15%;
+    left: 0;
 }
-
 .antennas {
-  position: absolute;
-  transition: left .6s;
-  left: 22%;
+    position: absolute;
+    -webkit-transition: left .6s;
+            transition: left .6s;
+    left: 22%;
 }
 .antennas.right {
-  left: 0%;
+    left: 0%;
 }
-
 .antenna {
-  background: #e0d2be;
-  position: absolute;
-  width: 2px;
+    background: #e0d2be;
+    position: absolute;
+    width: 2px;
 }
 .antenna.short {
-  height: 20px;
-  top: -60px;
-  left: 50px;
+    height: 20px;
+    top: -60px;
+    left: 50px;
 }
 .antenna.long {
-  border-top: 6px solid #e0d2be;
-  border-bottom: 6px solid #e0d2be;
-  height: 36px;
-  top: -78px;
-  left: 56px;
+    border-top: 6px solid #e0d2be;
+    border-bottom: 6px solid #e0d2be;
+    height: 36px;
+    top: -78px;
+    left: 56px;
 }
-
 .head {
-  background: #fefbc7;
-  border-radius: 90px 90px 14px 14px;
-  -moz-border-radius: 90px 90px 14px 14px;
-  -webkit-border-radius: 90px 90px 14px 14px;
-  height: 56px;
-  margin-left: -45px;
-  overflow: hidden;
-  position: absolute;
-  width: 90px;
-  z-index: 1;
-  top: -46px;
-  left: 50%;
+    background: #fefbc7;
+    border-radius: 90px 90px 14px 14px;
+    -moz-border-radius: 90px 90px 14px 14px;
+    -webkit-border-radius: 90px 90px 14px 14px;
+    height: 56px;
+    margin-left: -45px;
+    overflow: hidden;
+    position: absolute;
+    width: 90px;
+    z-index: 1;
+    top: -46px;
+    left: 50%;
 }
 .head .stripe {
-  position: absolute;
-  width: 100%;
+    position: absolute;
+    width: 100%;
 }
 .head .stripe.one {
-  background: #bab896;
-  height: 6px;
-  opacity: .8;
-  z-index: 1;
-  top: 6px;
+    background: #bab896;
+    height: 6px;
+    opacity: .8;
+    filter: alpha(opacity=80);
+    z-index: 1;
+    top: 6px;
 }
 .head .stripe.two {
-  background: #CD7640;
-  height: 4px;
-  top: 17px;
+    background: #CD7640;
+    height: 4px;
+    top: 17px;
 }
 .head .stripe.three {
-  background: #999;
-  height: 4px;
-  opacity: .5;
-  bottom: 3px;
+    background: #999;
+    height: 4px;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    bottom: 3px;
 }
 .head .eyes {
-  display: block;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  transition: left .6s;
-  left: 0%;
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    -webkit-transition: left .6s;
+            transition: left .6s;
+    left: 0%;
 }
 .head .eyes.right {
-  left: 36%;
+    left: 36%;
 }
 .head .eye {
-  border-radius: 50%;
-  display: block;
-  position: absolute;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
 }
 .head .eye.one {
-  background: #020204;
-  border: 4px solid #e0d2be;
-  height: 30px;
-  width: 30px;
-  top: 12px;
-  left: 12%;
+    background: #020204;
+    border: 4px solid #e0d2be;
+    height: 30px;
+    width: 30px;
+    top: 12px;
+    left: 12%;
 }
 .head .eye.one:after {
-  background: white;
-  border-radius: 50%;
-  content: "";
-  display: block;
-  height: 3px;
-  position: absolute;
-  width: 3px;
-  top: 4px;
-  right: 4px;
+    background: white;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 3px;
+    position: absolute;
+    width: 3px;
+    top: 4px;
+    right: 4px;
 }
 .head .eye.two {
-  background: #e0d2be;
-  border: 1px solid #020204;
-  height: 16px;
-  width: 16px;
-  top: 30px;
-  left: 40%;
+    background: #e0d2be;
+    border: 1px solid #020204;
+    height: 16px;
+    width: 16px;
+    top: 30px;
+    left: 40%;
 }
 .head .eye.two:after {
-  background: #020204;
-  border-radius: 50%;
-  content: "";
-  display: block;
-  height: 10px;
-  position: absolute;
-  width: 10px;
-  top: 2px;
-  left: 2px;
+    background: #020204;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    top: 2px;
+    left: 2px;
 }
-
 .ball {
-  background: #fef9b4;
-  border-radius: 50%;
-  height: 140px;
-  overflow: hidden;
-  position: relative;
-  width: 140px;
+    background: #fef9b4;
+    border-radius: 50%;
+    height: 140px;
+    overflow: hidden;
+    position: relative;
+    width: 140px;
 }
-
 .lines {
-  border: 2px solid #B19669;
-  border-radius: 50%;
-  height: 400px;
-  opacity: .6;
-  position: absolute;
-  width: 400px;
+    border: 2px solid #B19669;
+    border-radius: 50%;
+    height: 400px;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    position: absolute;
+    width: 400px;
 }
 .lines.two {
-  top: -10px;
-  left: -250px;
+    top: -10px;
+    left: -250px;
 }
-
 .ring {
-  background: #CD7640;
-  border-radius: 50%;
-  height: 70px;
-  margin-left: -35px;
-  position: absolute;
-  width: 70px;
+    background: #CD7640;
+    border-radius: 50%;
+    height: 70px;
+    margin-left: -35px;
+    position: absolute;
+    width: 70px;
 }
 .ring:after {
-  background: #fefbc7;
-  border-radius: 50%;
-  content: "";
-  display: block;
-  height: 70%;
-  margin-top: -35%;
-  margin-left: -35%;
-  position: absolute;
-  width: 70%;
-  top: 50%;
-  left: 50%;
+    background: #fefbc7;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 70%;
+    margin-top: -35%;
+    margin-left: -35%;
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
 }
 .ring.one {
-  margin-left: -40px;
-  height: 80px;
-  width: 90px;
-  top: 6%;
-  left: 50%;
+    margin-left: -40px;
+    height: 80px;
+    width: 90px;
+    top: 6%;
+    left: 50%;
 }
 .ring.two {
-  height: 38px;
-  width: 76px;
-  -ms-transform: rotate(36deg);
-  -webkit-transform: rotate(36deg);
-  transform: rotate(36deg);
-  top: 70%;
-  left: 18%;
+    height: 38px;
+    width: 76px;
+    -ms-transform: rotate(36deg);
+    -webkit-transform: rotate(36deg);
+    transform: rotate(36deg);
+    top: 70%;
+    left: 18%;
 }
 .ring.two:after {
-  top: 100%;
+    top: 100%;
 }
 .ring.three {
-  height: 30px;
-  -ms-transform: rotate(-50deg);
-  -webkit-transform: rotate(-50deg);
-  transform: rotate(-50deg);
-  top: 66%;
-  left: 90%;
+    height: 30px;
+    -ms-transform: rotate(-50deg);
+    -webkit-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+    top: 66%;
+    left: 90%;
 }
 .ring.three:after {
-  top: 110%;
+    top: 110%;
 }
-
 .shadow {
-  background: #3A271C;
-  border-radius: 50%;
-  height: 23.33333px;
-  opacity: .7;
-  position: absolute;
-  width: 140px;
-  z-index: -1;
-  left: 5px;
-  bottom: -8px;
+    background: #3A271C;
+    border-radius: 50%;
+    height: 23.33333px;
+    opacity: .7;
+    filter: alpha(opacity=70);
+    position: absolute;
+    width: 140px;
+    z-index: -1;
+    left: 5px;
+    bottom: -8px;
 }
-
 /*media queries*/
 
+@media (max-width: 850px) {
+    #wrapper {
+        width: 75%
+    }
+    sup {
+        top: -0.3em;
+    }
+}
+@media (max-width: 558px) {
+    #wrapper {
+        width: 80%;
+    }
+    .sand {
+        height: 15%;
+    }
+    .bb8 {
+        bottom: 10%;
+    }
+    #content {
+        top: 50px;
+    }
+}
 /*iphone 6s and narrow desktops*/
 
 @media (max-width: 414px) {
-	#wrapper {
-		width: 80%;
-	}
-
-	#content {
-		top: 50px;
-	}
-
-	h3 {
-		font-size: 18px;
-	}
-
-	h5 {
-		font-size: 12px;
-	}
-
-	.sand {
-		height: 15%;
-	}
-
-	.bb8 {
-		bottom:10%;
-	}
-
+    h3 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 12px;
+    }
+    #result {
+        font-size: 16px;
+    }
 }
+@media (max-width: 406px) {
+    #content {
+        top: 30px;
+    }
+    #wrapper {
+        width: 95%;
+    }
+}
+/*iPhone 6*/
 
-/*iPhone 5 */ 
+@media (max-width: 375px) {
+    h2 {
+        font-size: 24px;
+    }
+    #resultBox,
+    h5 {
+        margin: 10px 0;
+        padding: 0;
+    }
+    .sand {
+        height: 12%;
+    }
+    .bb8 {
+        bottom: 7%;
+    }
+    h3 {
+        margin-bottom: 20px;
+    }
+}
+/*iPhone 4 + 5*/
 
 @media (max-width: 320px) {
-	#wrapper {
-		width: 95%
-	}
-
-	#content {
-		top: 30px;
-	}
-
-	h2 {
-		font-size: 24px;
-	}
-
-	.hide-small {
-		display: none;
-	}
+    #content {
+        top: 20px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 16px
+    }
+    h3 {
+        font-size: 16px;
+    }
+    .sand {
+        height: 10%;
+    }
+    .bb8 {
+        bottom: 5%;
+    }
+    h1,
+    h3 {
+        margin: 20px 0;
+    }
+    #result {
+        font-size: 12px;
+    }
+    .hide-small {
+        display: none;
+    }
 }

@@ -50,7 +50,22 @@
 						<h5 class="intro">Ever wondered what your character name would be like in a SciFi World?</h5>
 						<h5 class="intro hide-small">Maybe you'd like to find a sci-fi themed name for your yet-unnamed geekling, dog or gerbil?</h5>
 						<h5 class="intro hide-small">Do you want your little nerdlet to stand out from the rest?<h5>
-						<h3 id="autoscroll">Create your own SciFi name based on your first name!</h3>
+						<h3 id="autoscroll">Create your own SciFi name based on your first name! 
+							<sup>
+								<button data-toggle="popover" data-trigger="hover" data-placement="left" id="infoBtn" class="btn btn-sm" type="button" title="How are names created?" data-html="true" data-content="
+							This name generator constructs and uses Markov chains. Given a list of sample names (data sources see below) it analyzes each name to construct frequency tables for name length and letter pairs. It then uses these tables to construct a new name in the style of the sample set.
+							<br>
+							<br>
+							We then optimize the result to match as many characters of your name as possible, depending on the length of your name and the amount of unique characters in your name.
+							<br>
+							<br>
+							Data sources: 
+							Kate Monk's Onomastikon as well as all popular Science Fiction series out there (e.g. Star Wars, Star Trek, Dr. Who, Battlestar Galactica, Stargate, ALF, Firefly, Blake's 7, Dune, Planet of the Apes).
+							"><i class="fa fa-info-circle"></i></button>
+							</sup>
+
+						</h3>
+				        
 					</header>
 				</div>
 			</div>
@@ -62,6 +77,7 @@
 				      <span class="input-group-btn">
 				        <button id="submitBtn" class="btn btn-default" type="button" onclick="scifiName()">Generate!</button>
 				      </span>
+
 				    </div><!-- /input-group -->
 			  	</div><!-- /.col-->
 			</div> <!-- /. row-->
@@ -71,9 +87,6 @@
 					<div id="resultBox" class="input-group">
 						<h5 id="labelResult">Your SciFi name is:</h5>
 							<p id="result"></p>
-						<div id="more" >
-							<button type="button" class="btn btn-sm" onclick="scifiName()">Generate another one!</button>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -86,6 +99,9 @@
 			<div class="message">
 		  		<h2>move mouse or tap.</h2>
 			</div>
+			<footer>
+			<p>&copy; <a href="http://kristinawritesco.de/" target="_blank">kristinawritesco.de</a></p>
+			</footer>
 		</div>
 		<div class="bb8">
 		  <div class="antennas">
@@ -118,7 +134,6 @@
    
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/jquery.easing.min.js"></script>
 	<script type="text/javascript" src="js/name_generator.js"></script>
 	<script type="text/javascript" src="js/data.js"></script>	
 	<script type="text/javascript" src="js/main.js"></script>
