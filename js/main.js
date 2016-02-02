@@ -1,3 +1,4 @@
+
 function showBox () {
 	// show result box
 	document.getElementById("resultBox").style.display = "block"
@@ -5,10 +6,6 @@ function showBox () {
 	document.getElementById("inputVal").focus()
 	// hide intro
 	$(".intro").hide()
-	// // scroll to box
-	// $("html, body").animate({
- //        scrollTop: $("#autoscroll").offset().top
- //      	}, 400, "easeInCubic");
 }
 
 var scifiName = function  () {
@@ -30,11 +27,16 @@ var scifiName = function  () {
 	var lastChInput = inputSplit.length -1 
 	console.log(inputSplit)
 
-	
 	var matchVal
 	var matchSplit = []
+	lastChMatch = matchSplit.length -1 
+	var sorted_matchArr =[]
 
-	do {
+	
+	//generate new name 
+	function newName () {
+
+		var matchArr = []
 
 		do {
 		// generate name using name_generator.js
@@ -43,14 +45,10 @@ var scifiName = function  () {
 
 		// create array from all characters of match value
 		matchSplit = matchVal.split("")
-		lastChMatch = matchSplit.length -1 
 		console.log(matchSplit)
-		} while ( inputSplit[0] !== matchSplit[0])
+		} while (inputSplit[0] !== matchSplit[0])
 
-		var matchArr = []
-		var sorted_matchArr =[]
-		
-		//loop through sorted arrays and add duplicates to match array
+		//loop through arrays and add duplicates to match array
 		for (var i= 0; i < inputSplit.length; i++) {
 			for(var j =0; j < matchSplit.length; j++)
 				if (inputSplit[i] == matchSplit[j]) {
@@ -58,21 +56,96 @@ var scifiName = function  () {
 				}
 		}
 
+		//sort match array
 		sorted_matchArr = matchArr.sort()
 		console.log(sorted_matchArr)
-		var uniqueArr = []
+	}
 
-		//loop through array and find unique values
-		for(var i=0; i < sorted_matchArr.length; i++) {
+	// create array with unique characters of input array to prep for result condition
+	var inputUnique = []
+
+	function inputcalc () {
+		var sorted_input = []
+		sorted_input = inputSplit.sort()
+		for(var i=0; i < sorted_input.length; i++) {
+			
 			//if two values in sorted match array are not similar
-			if( sorted_matchArr[i+1] !== sorted_matchArr[i]) {
+			if( sorted_input[i+1] !== sorted_input[i]) {
 				//check if value already exists in unique array
-				if(uniqueArr.indexOf(sorted_matchArr[i]) !== sorted_matchArr[i]){
-					uniqueArr.push(sorted_matchArr[i])
+				if(inputUnique.indexOf(inputUnique[i]) !== sorted_input[i]){
+					inputUnique.push(sorted_input[i])
 				}
 			}
 		}
-	} while (uniqueArr.length < 3)
+		inputSplit = inputVal.split("")
+	}
+	inputcalc()
+	console.log(inputUnique)
+
+	// generate new names and calc unique values until certain condition is met
+	if(inputSplit.length <= 3 || inputSplit.length > 8) {
+		do{
+			newName()
+			var uniqueArr = []
+			//loop through sorted match array and find unique values
+			for(var i=0; i < sorted_matchArr.length; i++) {
+				//if two values in sorted match array are not similar
+				if( sorted_matchArr[i+1] !== sorted_matchArr[i]) {
+					//check if value already exists in unique array
+					if(uniqueArr.indexOf(sorted_matchArr[i]) !== sorted_matchArr[i]){
+						uniqueArr.push(sorted_matchArr[i])
+					}
+				}
+			}
+		//try finding name with at least 3 unique matching characters
+		} while (uniqueArr.length < 3)
+	} else if (inputUnique.length >= 5) {
+		do{
+			newName()
+			var uniqueArr = []
+			//loop through sorted match array and find unique values
+			for(var i=0; i < sorted_matchArr.length; i++) {
+				//if two values in sorted match array are not similar
+				if( sorted_matchArr[i+1] !== sorted_matchArr[i]) {
+					//check if value already exists in unique array
+					if(uniqueArr.indexOf(sorted_matchArr[i]) !== sorted_matchArr[i]){
+						uniqueArr.push(sorted_matchArr[i])
+					}
+				}
+			}
+		} while (uniqueArr.length < inputUnique.length - 1) 
+	} else if (inputUnique.length >= 6) {
+		do{
+			newName()
+			var uniqueArr = []
+			//loop through sorted match array and find unique values
+			for(var i=0; i < sorted_matchArr.length; i++) {
+				//if two values in sorted match array are not similar
+				if( sorted_matchArr[i+1] !== sorted_matchArr[i]) {
+					//check if value already exists in unique array
+					if(uniqueArr.indexOf(sorted_matchArr[i]) !== sorted_matchArr[i]){
+						uniqueArr.push(sorted_matchArr[i])
+					}
+				}
+			}
+		} while (uniqueArr.length < inputUnique.length - 2) 
+	} else {
+		do {
+			newName()
+			var uniqueArr = []
+			//loop through sorted match array and find unique values
+			for(var i=0; i < sorted_matchArr.length; i++) {
+				//if two values in sorted match array are not similar
+				if( sorted_matchArr[i+1] !== sorted_matchArr[i]) {
+					//check if value already exists in unique array
+					if(uniqueArr.indexOf(sorted_matchArr[i]) !== sorted_matchArr[i]){
+						uniqueArr.push(sorted_matchArr[i])
+					}
+				}
+			}
+			//try finding name with same amount of unique characters from input name
+		} while (uniqueArr.length < inputUnique.length)
+	}
 
 	console.log(uniqueArr)
 	console.log(matchVal)
@@ -83,6 +156,17 @@ var scifiName = function  () {
 	showBox()
 
 } // ./ scifiName
+
+$("document").ready(function() {
+
+	$("#inputVal").keydown(function(event) {
+		if (event.keyCode == 13) {
+	    $('#submitBtn').trigger('click');
+		}
+	})
+})
+
+
 
 // BB8
 
